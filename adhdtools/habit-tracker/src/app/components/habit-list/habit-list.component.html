@@ -1,0 +1,16 @@
+<ul>
+    <li *ngFor="let habit of habits">
+        <input #title type="text" [(ngModel)]="habit.Title">
+        <select [(ngModel)]="habit.Type">
+            <option *ngFor="let t of habitTypes">{{t}}</option>
+        </select>
+        <button (click)="deleteHabit(habit.Id)">D</button>
+    </li>
+</ul>
+<br />
+<button (click)="addHabit()">Add Habit</button>
+<div *ngFor="let habit of habits">
+    <p>{{habit.Title}}</p>
+    <p>{{habit.Type}}</p>
+    <hr/>
+</div>
